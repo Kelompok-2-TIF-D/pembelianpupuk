@@ -794,14 +794,14 @@ public void tampiltabel(){
     }
     private void txthapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txthapusActionPerformed
         // TODO add your handling code here:
-        String jmbt =
+        String hapus =
         txtdatapenjualan.getValueAt(txtdatapenjualan.getSelectedRow(),0).toString();
         try {
             Connection c = koneksi.getKoneksi();
             PreparedStatement pStatement = null;
             String sql ="DELETE FROM penjualanpupuk WHERE Id_Order=? ";
             pStatement = c.prepareStatement(sql);
-            pStatement.setString(1, jmbt);
+            pStatement.setString(1, hapus);
             int intTambah= pStatement.executeUpdate();
             if (intTambah>0)
             JOptionPane.showMessageDialog(this,
